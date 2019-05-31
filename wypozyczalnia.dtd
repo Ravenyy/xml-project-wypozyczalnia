@@ -22,9 +22,11 @@
 <!ELEMENT city (#PCDATA)>
 <!ELEMENT road (#PCDATA)>
 <!ELEMENT mixed (#PCDATA)>
-<!ELEMENT rentalPrice (#PCDATA)>
+<!ELEMENT rentalPrice (perDay, perHour)>
+<!ELEMENT perDay (#PCDATA)>
+<!ELEMENT perHour (#PCDATA)>
 <!ELEMENT availability (#PCDATA)>
-<!ELEMENT respEmployeeId (EMPTY)>
+<!ELEMENT respEmployeeId EMPTY>
 
 <!ATTLIST car carId ID #REQUIRED>
 <!ATTLIST car type CDATA #IMPLIED>
@@ -37,11 +39,11 @@
 <!ATTLIST rentalPrice currency CDATA "zł">
 
 <!ELEMENT clients (client*)>
-<!ELEMENT client (firstName, lastName, companyName?, contactPhone)>
-<!ELEMENT firstName (#PCDATA)>
-<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT client (clientFirstName, clientLastName, companyName?, clientContactPhone)>
+<!ELEMENT clientFirstName (#PCDATA)>
+<!ELEMENT clientLastName (#PCDATA)>
 <!ELEMENT companyName (#PCDATA)>
-<!ELEMENT contactPhone (#PCDATA)>
+<!ELEMENT clientContactPhone (#PCDATA)>
 
 <!ATTLIST client clientId ID #REQUIRED>
 
@@ -52,8 +54,8 @@
 <!ELEMENT date (#PCDATA)>
 <!ELEMENT hour1 (#PCDATA)>
 <!ELEMENT hour2 (#PCDATA)>
-<!ELEMENT carId (EMPTY)>
-<!ELEMENT clientId (EMPTY)>
+<!ELEMENT carId EMPTY>
+<!ELEMENT clientId EMPTY>
 <!ELEMENT deposit (#PCDATA)>
 <!ELEMENT price (#PCDATA)>
 

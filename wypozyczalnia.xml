@@ -1,150 +1,150 @@
 <?xml version = "1.0"?>
-<!DOCTYPE note SYSTEM "wypozyczalnia.dtd">
+<!DOCTYPE carRental SYSTEM "wypozyczalnia.dtd">
 <carRental>
-	<employees>
-		<employee empId="1">
-			<firstName>Janusz</firstName>
-			<secondName>Kowalski</secondName>
-			<employmentData>06.04.2019</employmentData>
-			<contactPhone>+48123456789</contactPhone>
-		</employee>
-		<employee empId="2">
-			<firstName>Halina</firstName>
-			<secondName>Nowak</secondName>
-			<employmentData>06.05.2019</employmentData>
-			<contactPhone>+48987654321</contactPhone>
-		</employee>
-	</employees>	
-	
-	<cars>
-		<car carId="1" type="sedan">>
-			<registration>GD 12345</registration>
-			<brand>Audi</brand>
-			<model year="2016">A6</model>
-			<engine fuel="diesel">
-				<size unit="dm3">3.0</size>
-				<type>TDI</type>
-				<power unit="HP">272</power>
-				<avgFuelUsage unit="l/100km">
-					<city>5.9</city>
-					<road>4.6</road>
-					<mixed>5.1</mixed>
-				</avgFuelUsage>
-			</engine>
-			<rentalPrice>
-				<perDay>600</perDay>
-				<perHour>60</perHour>
-			</rentalPrice>
-			<availability>Available</availability>
-			<respEmployeeId empId="1"/>
-		</car>
-		<car carId="2" type="sedan">
-			<registration>GD 54321</registration>
-			<brand>Honda</brand>
-			<model year="2018" type=""></model>
-			<engine fuel="petrol">
-				<size unit="cm3">1990</size>
-				<type>i-VTEC</type>
-				<power unit="HP">320</power>
-				<avgFuelUsage unit="l/100km">
-					<city>13.5</city>
-					<road>9.0</road>
-					<mixed>9.9</mixed>
-				</avgFuelUsage>
-			</engine>
-			<rentalPrice>
-				<perDay>800</perDay>
-				<perHour>80</perHour>
-			</rentalPrice>
-			<availability>Available</availability>
-			<respEmployeeId empId="1"/>
-		</car>
-		<car carId="3" type="sedan">
-			<registration>GD 09876</registration>
-			<brand>Mazda</brand>
-			<model year="2017">3</model>
-			<engine fuel="petrol">
-				<size unit="dm3">2.0</size>
-				<type>SKYACTIV-G</type>
-				<power unit="HP">165</power>
-				<avgFuelUsage unit="l/100km">
-					<city>8.4</city>
-					<road>6.1</road>
-					<mixed>6.9</mixed>
-				</avgFuelUsage>
-			</engine>
-			<rentalPrice>
-				<perDay>500</perDay>
-				<perHour>50</perHour>
-			</rentalPrice>
-			<availability>Available</availability>
-			<respEmployeeId empId="1"/>
-		</car>
-		<car carId="4" type="bus">
-			<registration>GD 67890</registration>
-			<brand>Mercedes</brand>
-			<model year="2018">Sprinter</model>
-			<engine fuel="diesel">
-				<size unit="cm3">2143</size>
-				<type>CDI</type>
-				<power unit="HP">163</power>
-				<avgFuelUsage unit="l/100km">
-					<mixed>11.9</mixed>
-				</avgFuelUsage>
-			</engine>
-			<rentalPrice>
-				<perDay>1100</perDay>
-				<perHour>110</perHour>
-			</rentalPrice>
-			<availability>Available</availability>
-			<respEmployeeId empId="2"/>
-		</car>
-	</cars>
-	
-	<clients>
-		<client clientId="1">
-			<firstName>Paweł</firstName>
-			<lastName>Szewczyk</lastName>
-			<contactPhone>+48500600700</contactPhone>
-		</client>
-		<client clientId="2">
-			<firstName>Malwina</firstName>
-			<lastName>Brzęczyszczykiewicz</lastName>
-			<companyName>Company Sp. Z.O.O.</companyName>
-			<contactPhone>+48100200300</contactPhone>
-		</client>
-		<client clientId="3">
-			<firstName>Mariusz</firstName>
-			<lastName>Malinowski</lastName>
-			<contactPhone>+48300400100</contactPhone>
-		</client>
-	</clients>
-	
-	<reservations>
-		<reservation resId="1">
-			<date1>05.05.2019</date1>
-			<date2>22.05.2019</date2>
-			<carId carId = "1"/>
-			<clientId clientId="1"/>
-			<deposit>600</deposit>
-			<price>9600</price>
-		</reservation>
-		<reservation resId="2">
-			<date1>06.05.2019</date1>
-			<date2>13.05.2019</date2>
-			<carId carId = "3"/>
-			<clientId clientId="2"/>
-			<deposit>500</deposit>
-			<price>3500</price>
-		</reservation>
-		<reservation resId="3">
-			<date>12.05.2019</date>
-			<hour1>8:00</hour1>
-			<hour2>17:00</hour2>
-			<carId carId = "4"/>
-			<clientId clientId="3"/>
-			<deposit>1200</deposit>
-			<price>1080</price>
-		</reservation>
-	</reservations>
+  <employees>
+    <employee empId="e1">
+      <firstName>Janusz</firstName>
+      <secondName>Kowalski</secondName>
+      <employmentData>06.04.2019</employmentData>
+      <contactPhone>+48123456789</contactPhone>
+    </employee>
+    <employee empId="e2">
+      <firstName>Halina</firstName>
+      <secondName>Nowak</secondName>
+      <employmentData>06.05.2019</employmentData>
+      <contactPhone>+48987654321</contactPhone>
+    </employee>
+  </employees>	
+  
+  <cars>
+    <car carId="s1" type="sedan">
+      <registration>GD 12345</registration>
+      <brand>Audi</brand>
+      <model year="2016">A6</model>
+      <engine fuel="diesel">
+	<size unit="dm3">3.0</size>
+	<type>TDI</type>
+	<power unit="HP">272</power>
+	<avgFuelUsage unit="l/100km">
+	  <city>5.9</city>
+	  <road>4.6</road>
+	  <mixed>5.1</mixed>
+	</avgFuelUsage>
+      </engine>
+      <rentalPrice>
+	<perDay>600</perDay>
+	<perHour>60</perHour>
+      </rentalPrice>
+      <availability>Available</availability>
+      <respEmployeeId empId="e1"/>
+    </car>
+    <car carId="s2" type="sedan">
+      <registration>GD 54321</registration>
+      <brand>Honda</brand>
+      <model year="2018">Civic</model>
+      <engine fuel="petrol">
+	<size unit="cm3">1990</size>
+	<type>i-VTEC</type>
+	<power unit="HP">320</power>
+	<avgFuelUsage unit="l/100km">
+	  <city>13.5</city>
+	  <road>9.0</road>
+	  <mixed>9.9</mixed>
+	</avgFuelUsage>
+      </engine>
+      <rentalPrice>
+	<perDay>800</perDay>
+	<perHour>80</perHour>
+      </rentalPrice>
+      <availability>Available</availability>
+      <respEmployeeId empId="e1"/>
+    </car>
+    <car carId="s3" type="sedan">
+      <registration>GD 09876</registration>
+      <brand>Mazda</brand>
+      <model year="2017">3</model>
+      <engine fuel="petrol">
+	<size unit="dm3">2.0</size>
+	<type>SKYACTIV-G</type>
+	<power unit="HP">165</power>
+	<avgFuelUsage unit="l/100km">
+	  <city>8.4</city>
+	  <road>6.1</road>
+	  <mixed>6.9</mixed>
+	</avgFuelUsage>
+      </engine>
+      <rentalPrice>
+	<perDay>500</perDay>
+	<perHour>50</perHour>
+      </rentalPrice>
+      <availability>Available</availability>
+      <respEmployeeId empId="e1"/>
+    </car>
+    <car carId="s4" type="bus">
+      <registration>GD 67890</registration>
+      <brand>Mercedes</brand>
+      <model year="2018">Sprinter</model>
+      <engine fuel="diesel">
+	<size unit="cm3">2143</size>
+	<type>CDI</type>
+	<power unit="HP">163</power>
+	<avgFuelUsage unit="l/100km">
+	  <mixed>11.9</mixed>
+	</avgFuelUsage>
+      </engine>
+      <rentalPrice>
+	<perDay>1100</perDay>
+	<perHour>110</perHour>
+      </rentalPrice>
+      <availability>Available</availability>
+      <respEmployeeId empId="e2"/>
+    </car>
+  </cars>
+  
+  <clients>
+    <client clientId="c1">
+      <clientFirstName>Paweł</clientFirstName>
+      <clientLastName>Szewczyk</clientLastName>
+      <clientContactPhone>+48500600700</clientContactPhone>
+    </client>
+    <client clientId="c2">
+      <clientFirstName>Malwina</clientFirstName>
+      <clientLastName>Brzęczyszczykiewicz</clientLastName>
+      <companyName>Company Sp. Z.O.O.</companyName>
+      <clientContactPhone>+48100200300</clientContactPhone>
+    </client>
+    <client clientId="c3">
+      <clientFirstName>Mariusz</clientFirstName>
+      <clientLastName>Malinowski</clientLastName>
+      <clientContactPhone>+48300400100</clientContactPhone>
+    </client>
+  </clients>
+  
+  <reservations>
+    <reservation resId="r1">
+      <date1>05.05.2019</date1>
+      <date2>22.05.2019</date2>
+      <carId carId = "s1"/>
+      <clientId clientId="c1"/>
+      <deposit>600</deposit>
+      <price>9600</price>
+    </reservation>
+    <reservation resId="r2">
+      <date1>06.05.2019</date1>
+      <date2>13.05.2019</date2>
+      <carId carId = "s3"/>
+      <clientId clientId="c2"/>
+      <deposit>500</deposit>
+      <price>3500</price>
+    </reservation>
+    <reservation resId="r3">
+      <date>12.05.2019</date>
+      <hour1>8:00</hour1>
+      <hour2>17:00</hour2>
+      <carId carId = "s4"/>
+      <clientId clientId="c3"/>
+      <deposit>1200</deposit>
+      <price>1080</price>
+    </reservation>
+  </reservations>
 </carRental>
