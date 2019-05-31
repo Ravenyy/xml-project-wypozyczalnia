@@ -16,148 +16,135 @@
 	</employees>	
 	
 	<cars>
-		<car id='1' type="">>
-			<registration></registration>
-			<brand></brand>
-			<model year=""</model>
-			<engine fuel="">
-				<size></size>
-				<type></type>
+		<car id='1' type="sedan">>
+			<registration>GD 12345</registration>
+			<brand>Audi</brand>
+			<model year="2016">A6</model>
+			<engine fuel="diesel">
+				<size unit="cm^3">3000</size>
+				<type>TDI</type>
+				<power unit="HP">272</power>
 				<avgFuelUsage unit="l/100km">
-					<city></city>
-					<road></road>
-					<mixed></mixed>
+					<city>5.9</city>
+					<road>4.6</road>
+					<mixed>5.1</mixed>
 				</avgFuelUsage>
 			</engine>
 			<rentalPrice>
-				<perDay></perDay>
-				<perHour></perHour>
+				<perDay>600</perDay>
+				<perHour>60</perHour>
 			</rentalPrice>
-			<availability></availability>
-			<respEmployeeId></respEmployeeId>
+			<availability>Available</availability>
+			<respEmployeeId>1</respEmployeeId>
 		</car>
-		<car id='2' type=''>
-			<registration></registration>
-			<brand></brand>
-			<model year="" type=""></model>
-			<engine fuel="">
-				<size></size>
-				<type></type>
+		<car id='2' type="sedan">
+			<registration>GD 54321</registration>
+			<brand>Honda</brand>
+			<model year="2018" type=""></model>
+			<engine fuel="petrol">
+				<size unit="cm^3">1990</size>
+				<type>i-VTEC</type>
+				<power unit="HP">320</power>
 				<avgFuelUsage unit="l/100km">
-					<city></city>
-					<road></road>
-					<mixed></mixed>
+					<city>13.5</city>
+					<road>9.0</road>
+					<mixed>9.9</mixed>
 				</avgFuelUsage>
 			<rentalPrice>
-				<perDay></perDay>
-				<perHour></perHour>
+				<perDay>800</perDay>
+				<perHour>80</perHour>
 			</rentalPrice>
-			<availability></availability>
-			<respEmployeeId></respEmployeeId>
+			<availability>Available</availability>
+			<respEmployeeId>1</respEmployeeId>
 		</car>
-		<car id='3' type=''>
-			<registration></registration>
-			<brand></brand>
-			<model year="" type=""></model>
-			<engine fuel="">
-				<size></size>
-				<type></type>
+		<car id='3' type="sedan">
+			<registration>GD 09876</registration>
+			<brand>Mazda</brand>
+			<model year="2017">3</model>
+			<engine fuel="petrol">
+				<size unit="cm^3">2000</size>
+				<type>SKYACTIV-G</type>
+				<power unit="HP">165</power>
 				<avgFuelUsage unit="l/100km">
-					<city></city>
-					<road></road>
-					<mixed></mixed>
-				</avgFuelUsage>
-			</engine>
-			<rentalPrice>
-				<perDay></perDay>
-				<perHour></perHour>
-			</rentalPrice>
-			<availability></availability>
-			<respEmployeeId></respEmployeeId>
-		</car>
-		<car id='4' type=''>
-			<registration></registration>
-			<brand></brand>
-			<model year=""></model>
-			<engine fuel="">
-				<size></size>
-				<type></type>
-				<avgFuelUsage unit="l/100km">
-				<city></city>
-				<road></road>
-				<mixed></mixed>
+					<city>8.4</city>
+					<road>6.1</road>
+					<mixed>6.9</mixed>
 				</avgFuelUsage>
 			</engine>
 			<rentalPrice>
-				<perDay></perDay>
-				<perHour></perHour>
+				<perDay>500</perDay>
+				<perHour>50</perHour>
 			</rentalPrice>
-			<availability></availability>
-			<respEmployeeId></respEmployeeId>
+			<availability>Available</availability>
+			<respEmployeeId>1</respEmployeeId>
+		</car>
+		<car id='4' type="bus">
+			<registration>GD 67890</registration>
+			<brand>Mercedes</brand>
+			<model year="2018">Sprinter</model>
+			<engine fuel="diesel">
+				<size unit="cm^3">2143</size>
+				<type>CDI</type>
+				<power unit="HP">163</power>
+				<avgFuelUsage unit="l/100km">
+					<city>13.5</city>
+					<road>9.6</road>
+					<mixed>11.9</mixed>
+				</avgFuelUsage>
+			</engine>
+			<rentalPrice>
+				<perDay>1100</perDay>
+				<perHour>110</perHour>
+			</rentalPrice>
+			<availability>Available</availability>
+			<respEmployeeId>2</respEmployeeId>
 		</car>
 	</cars>
 	
 	<clients>
 		<client id='1'>
-			<firstName></firstName>
-			<lastName></lastName>
-			<contactPhone></contactPhone>
+			<firstName>Paweł</firstName>
+			<lastName>Szewczyk</lastName>
+			<contactPhone>+48500600700</contactPhone>
 		</client>
 		<client id='2'>
-			<firstName></firstName>
-			<lastName></lastName>
-			<companyName></companyName>
-			<contactPhone></contactPhone>
+			<firstName>Malwina</firstName>
+			<lastName>Brzęczyszczykiewicz</lastName>
+			<companyName>Company Sp. Z.O.O.</companyName>
+			<contactPhone>+48100200300</contactPhone>
 		</client>
 		<client id='3'>
-			<firstName></firstName>
-			<lastName></lastName>
-			<contactPhone></contactPhone>
+			<firstName>Mariusz</firstName>
+			<lastName>Malinowski</lastName>
+			<contactPhone>+48300400100</contactPhone>
 		</client>
 	</clients>
 	
 	<reservations>
 		<reservation id='1'>
-			<date1></date1>
-			<date2></date2>
-			<carId></carId>
-			<clientId></clientId>
+			<date1>05.05.2019</date1>
+			<date2>22.05.2019</date2>
+			<carId>1</carId>
+			<clientId>1</clientId>
+			<deposit>600</deposit>
+			<price>9600<price>
 		</reservation>
 		<reservation id='2'>
-			<date1></date1>
-			<date2></date2>
-			<carId></carId>
-			<clientId></clientId>
+			<date1>06.05.2019</date1>
+			<date2>13.05.2019</date2>
+			<carId>3</carId>
+			<clientId>2</clientId>
+			<deposit>500</deposit>
+			<price>3500<price>
 		</reservation>
 		<reservation id='3'>
-			<date1></date1>
-			<date2></date2>
-			<carId></carId>
-			<clientId></clientId>
+			<date>12.05.2019</date>
+			<hour1>8:00</hour1>
+			<hour2>17:00</hour2>
+			<carId>4</carId>
+			<clientId>3</clientId>
+			<deposit>1200</deposit>
+			<price>1080<price>
 		</reservation>
 	</reservations>
-	
-	<transactions>
-		<transaction id='1'>
-			<clientId></clientId>
-			<reservationId></reservationId>
-			<deposit></deposit>
-			<date></date>
-			<price></price>
-		</transaction>
-		<transactions id='2'>
-			<clientId></clientId>
-			<reservationId></reservationId>
-			<deposit></deposit>
-			<date></date>
-			<price></price>
-		</transaction>
-		<transaction id='3'>
-			<clientId></clientId>
-			<reservationId></reservationId>
-			<deposit></deposit>
-			<date></date>
-			<price></price>
-		</transaction>
-	</transactions>
 </carRental>
