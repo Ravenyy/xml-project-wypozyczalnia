@@ -22,7 +22,7 @@
 			<brand>Audi</brand>
 			<model year="2016">A6</model>
 			<engine fuel="diesel">
-				<size unit="cm^3">3000</size>
+				<size unit="dm3">3.0</size>
 				<type>TDI</type>
 				<power unit="HP">272</power>
 				<avgFuelUsage unit="l/100km">
@@ -43,7 +43,7 @@
 			<brand>Honda</brand>
 			<model year="2018" type=""></model>
 			<engine fuel="petrol">
-				<size unit="cm^3">1990</size>
+				<size unit="cm3">1990</size>
 				<type>i-VTEC</type>
 				<power unit="HP">320</power>
 				<avgFuelUsage unit="l/100km">
@@ -64,7 +64,7 @@
 			<brand>Mazda</brand>
 			<model year="2017">3</model>
 			<engine fuel="petrol">
-				<size unit="cm^3">2000</size>
+				<size unit="dm3">2.0</size>
 				<type>SKYACTIV-G</type>
 				<power unit="HP">165</power>
 				<avgFuelUsage unit="l/100km">
@@ -85,7 +85,7 @@
 			<brand>Mercedes</brand>
 			<model year="2018">Sprinter</model>
 			<engine fuel="diesel">
-				<size unit="cm^3">2143</size>
+				<size unit="cm3">2143</size>
 				<type>CDI</type>
 				<power unit="HP">163</power>
 				<avgFuelUsage unit="l/100km">
