@@ -1,22 +1,23 @@
 <?xml version = "1.0"?>
+<!DOCTYPE note SYSTEM "wypozyczalnia.dtd">
 <carRental>
 	<employees>
-		<employee id='1'>
+		<employee empId="1">
 			<firstName>Janusz</firstName>
 			<secondName>Kowalski</secondName>
 			<employmentData>06.04.2019</employmentData>
 			<contactPhone>+48123456789</contactPhone>
 		</employee>
-		<employee id='2'>
+		<employee empId="2">
 			<firstName>Halina</firstName>
 			<secondName>Nowak</secondName>
-			<employmentData id="2">06.05.2019</employmentData>
+			<employmentData>06.05.2019</employmentData>
 			<contactPhone>+48987654321</contactPhone>
 		</employee>
 	</employees>	
 	
 	<cars>
-		<car id='1' type="sedan">>
+		<car carId="1" type="sedan">>
 			<registration>GD 12345</registration>
 			<brand>Audi</brand>
 			<model year="2016">A6</model>
@@ -35,9 +36,9 @@
 				<perHour>60</perHour>
 			</rentalPrice>
 			<availability>Available</availability>
-			<respEmployeeId>1</respEmployeeId>
+			<respEmployeeId empId="1"/>
 		</car>
-		<car id='2' type="sedan">
+		<car carId="2" type="sedan">
 			<registration>GD 54321</registration>
 			<brand>Honda</brand>
 			<model year="2018" type=""></model>
@@ -50,14 +51,15 @@
 					<road>9.0</road>
 					<mixed>9.9</mixed>
 				</avgFuelUsage>
+			</engine>
 			<rentalPrice>
 				<perDay>800</perDay>
 				<perHour>80</perHour>
 			</rentalPrice>
 			<availability>Available</availability>
-			<respEmployeeId>1</respEmployeeId>
+			<respEmployeeId empId="1"/>
 		</car>
-		<car id='3' type="sedan">
+		<car carId="3" type="sedan">
 			<registration>GD 09876</registration>
 			<brand>Mazda</brand>
 			<model year="2017">3</model>
@@ -76,9 +78,9 @@
 				<perHour>50</perHour>
 			</rentalPrice>
 			<availability>Available</availability>
-			<respEmployeeId>1</respEmployeeId>
+			<respEmployeeId empId="1"/>
 		</car>
-		<car id='4' type="bus">
+		<car carId="4" type="bus">
 			<registration>GD 67890</registration>
 			<brand>Mercedes</brand>
 			<model year="2018">Sprinter</model>
@@ -87,8 +89,6 @@
 				<type>CDI</type>
 				<power unit="HP">163</power>
 				<avgFuelUsage unit="l/100km">
-					<city>13.5</city>
-					<road>9.6</road>
 					<mixed>11.9</mixed>
 				</avgFuelUsage>
 			</engine>
@@ -97,23 +97,23 @@
 				<perHour>110</perHour>
 			</rentalPrice>
 			<availability>Available</availability>
-			<respEmployeeId>2</respEmployeeId>
+			<respEmployeeId empId="2"/>
 		</car>
 	</cars>
 	
 	<clients>
-		<client id='1'>
+		<client clientId="1">
 			<firstName>Paweł</firstName>
 			<lastName>Szewczyk</lastName>
 			<contactPhone>+48500600700</contactPhone>
 		</client>
-		<client id='2'>
+		<client clientId="2">
 			<firstName>Malwina</firstName>
 			<lastName>Brzęczyszczykiewicz</lastName>
 			<companyName>Company Sp. Z.O.O.</companyName>
 			<contactPhone>+48100200300</contactPhone>
 		</client>
-		<client id='3'>
+		<client clientId="3">
 			<firstName>Mariusz</firstName>
 			<lastName>Malinowski</lastName>
 			<contactPhone>+48300400100</contactPhone>
@@ -121,30 +121,30 @@
 	</clients>
 	
 	<reservations>
-		<reservation id='1'>
+		<reservation resId="1">
 			<date1>05.05.2019</date1>
 			<date2>22.05.2019</date2>
-			<carId>1</carId>
-			<clientId>1</clientId>
+			<carId carId = "1"/>
+			<clientId clientId="1"/>
 			<deposit>600</deposit>
-			<price>9600<price>
+			<price>9600</price>
 		</reservation>
-		<reservation id='2'>
+		<reservation resId="2">
 			<date1>06.05.2019</date1>
 			<date2>13.05.2019</date2>
-			<carId>3</carId>
-			<clientId>2</clientId>
+			<carId carId = "3"/>
+			<clientId clientId="2"/>
 			<deposit>500</deposit>
-			<price>3500<price>
+			<price>3500</price>
 		</reservation>
-		<reservation id='3'>
+		<reservation resId="3">
 			<date>12.05.2019</date>
 			<hour1>8:00</hour1>
 			<hour2>17:00</hour2>
-			<carId>4</carId>
-			<clientId>3</clientId>
+			<carId carId = "4"/>
+			<clientId clientId="3"/>
 			<deposit>1200</deposit>
-			<price>1080<price>
+			<price>1080</price>
 		</reservation>
 	</reservations>
 </carRental>
