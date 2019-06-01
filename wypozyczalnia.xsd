@@ -20,7 +20,25 @@
 			<xsd:pattern value="\+\d{11}"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<xsd:complexType name="employeeData">
+		<xsd:sequence>
+			<xsd:element name="firstName" type="names"/>
+			<xsd:element name="secondName" type="names"/>
+			<xsd:element name="employmentDate" type="date"/>
+			<xsd:element name="contactPhone" type="phoneNumber"/>
+		</xsd:sequence>
+		<xsd:attribute name="empId" type="xsd:string" use="required"/>
+	<xsd:complexType>
+	
+	<xsd:complexType name="employeeList">
+		<xsd:sequence>
+			<xsd:element name="employee" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 
+	
+	
 	<xsd:simpleType name="carReg">
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="([A-Z]{2}\s.{5})|(([A-Z]{3})+\s+.{4})"/>
@@ -31,8 +49,219 @@
 		<xsd:restriction base ="xsd:string">
 			<xsd:minLength value="3"/>
 			<xsd:maxLengtd value="50"/>
-			<xsd:pattern value="[A-Z][a-z]+"/>
+			<xsd:pattern value="[A-Z][a-z]+)(\s[A-Z][a-z]+)*"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<xsd:simpleType name="fuelType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="petrol"/>
+			<xsd:enumeration value="diesel"/>
+			<xsd:enumeration value="gas"/>
+			<xsd:enumeration value="hybrid"/>
+			<xsd:enumeration value="electric"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="modelName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="year" type="xsd:gYear" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="sizeUnits">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="dm3"/>
+			<xsd:enumeration value="cm3"/>
+		</xsd:restriction>
+	<xsd:simpleType>
+	
+	<xsd:complexType name="engineSize">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="unit" type="sizeUnits" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="powerUnits">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="HP"/>
+			<xsd:enumeration value="KW"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="enginePower">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:integer">
+				<xsd:attribute name="unit" type="powerUnits" user="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="fuelUsageValue">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minExclusive value="0"/>
+			<xsd:fractionDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="fuelUsage">
+		<xsd:sequence>
+			<xsd:element name="city" type="fuelUsageValue" minOccurs="0"/>
+			<xsd:element name="road" type="fuelUsageValue" minOccurs="0"/>
+			<xsd:element name="mixed" type="fuelUsageValue"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="engineData">
+		<xsd:sequence>
+			<xsd:element name="size" type="engineSize"/>
+			<xsd:element name="type" type="xsd:string"/>
+			<xsd:element name="power" type="enginePower"/>
+			<xsd:element name="avgFuelUsage" type="fuelUsage"/>
+		</xsd:sequence>
+		<xsd:attribute name="fuel" type="fuelType" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="rentalPrices">
+		<xsd:sequence>
+			<xsd:element name="perDay" type="xsd:integer"/>
+			<xsd:element name="perHour" type="xsd:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="availabilityData"/>
+		<xsd:restricion base="xsd:string">
+			<xsd:enumeration value="Available"/>
+			<xsd:enumeration value="Not available"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="respID">
+		<xsd:attribute name="empId" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:attributeGroup name="carDataAttList">
+		<xsd:attribute name name="carId" type="xsd:string" use="required"/>
+		<xsd:attribute name="type" type="xsd:string" use="required"/>
+	</xsd:attributeGroup>
+	
+	<xsd:complexType name="carData">
+		<xsd:sequence>
+			<xsd:element name="registration" type="carReg"/>
+			<xsd:element name="brand" type="carBrand"/>
+			<xsd:element name="model" type="modelName"/>
+			<xsd:element name="engine" type="engineData"/>
+			<xsd:element name="rentalPrice" type="rentalPrices"/>
+			<xsd:element name="availability" type="availabilityData"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="carDataAttList">
+	</xsd:complexType>
+	
+	<xsd:complexType name="carList">
+		<xsd:sequence>
+			<xsd:element name="car" type="carData" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	<xsd:complexType name="clientData">
+		<xsd:sequence>
+			<xsd:element name="clientFirstName" type="name"/>
+			<xsd:element name="clientSecondName" type="name"/>
+			<xsd:element name="companyName" type="xsd:string"/>
+			<xsd:element name="clientContactPhone" type="contactPhone"/>
+		</xsd:sequence>
+		<xsd:attribute name="clientId" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:complexType nmae="clientList">
+		<xsd:sequence>
+			<xsd:element name="client" type="clientData" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	<xsd:complexType name="resCarID">
+		<xsd:attribute name="carId" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="resClientId">
+		<xsd:attribute name="clientId" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="time">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="((\d{1})|(\d{2})):\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="reservationData">
+		<xsd:sequence>
+			<xsd:element name="date1" type="date" minOccurs="0"/>
+			<xsd:element name="date2" type="date" minOccurs="0"/>
+			<xsd:element name="date" type="date" minOccurs="0"/>
+			<xsd:element name="hour1" type="time" minOccurs="0"/>
+			<xsd:element name="hour2" type="time" minOccurs="0"/>
+			<xsd:element name="carId" type="resCarId"/>
+			<xsd:element name="clientId" type="resClientId"/>
+			<xsd:element name="deposit" type="xsd:positiveInteger"/>
+			<xsd:element name="price" type="xsd:positiveInteger"/>
+		</xsd:sequence>
+		<xsd:attribute name="resId" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="reservationList">
+		<xsd:sequence>
+			<xsd:element name="reservation" type="reservationData"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	<xsd:complexType name="carRentalData">
+		<xsd:sequence>
+			<xsd:element name="employees" type="employeeList"/>
+			<xsd:element name="cars" type="carList"/>
+			<xsd:element name="clients" type="clientList"/>
+			<xsd:element name="reservations" type="reservationList"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </xsd:schema>
