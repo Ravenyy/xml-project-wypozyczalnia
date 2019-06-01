@@ -33,7 +33,12 @@
   
   <xsd:complexType name="employeeList">
     <xsd:sequence>
-      <xsd:element name="employee" maxOccurs="unbounded"/>
+      <xsd:element name="employee" maxOccurs="unbounded">
+	<xsd:key name="employeeId">
+	  <xsd:selector xpath="./employee"/>
+	  <xsd:field xpath="@empId"/>
+	</xsd:key>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
 
@@ -165,14 +170,24 @@
       <xsd:element name="engine" type="engineData"/>
       <xsd:element name="rentalPrice" type="rentalPrices"/>
       <xsd:element name="availability" type="availabilityData"/>
-      <xsd:element name="respEmployeeId" type="respID"/>
+      <xsd:element name="respEmployeeId" type="respID">
+	<xsd:keyref name="carResponsibleEmployeeIdRef" refer="employeeId">
+	  <xsd:selector xpath="./respEmployeeId"/>
+	  <xsd:field xpath="@empId"/>
+	</xsd:keyref>
+      </xsd:element>
     </xsd:sequence>
     <xsd:attributeGroup ref="carDataAttList"/>
   </xsd:complexType>
   
   <xsd:complexType name="carList">
     <xsd:sequence>
-      <xsd:element name="car" type="carData" maxOccurs="unbounded"/>
+      <xsd:element name="car" type="carData" maxOccurs="unbounded">
+	<xsd:key name="carId">
+	  <xsd:selector xpath="./car"/>
+	  <xsd:field xpath="@carId"/>
+	</xsd:key>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   
@@ -190,7 +205,12 @@
   
   <xsd:complexType name="clientList">
     <xsd:sequence>
-      <xsd:element name="client" type="clientData" maxOccurs="unbounded"/>
+      <xsd:element name="client" type="clientData" maxOccurs="unbounded">
+	<xsd:key name="clientId">
+	  <xsd:selector xpath="./client"/>
+	  <xsd:field xpath="@clientId"/>
+	</xsd:key>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   
@@ -217,8 +237,18 @@
       <xsd:element name="date" type="date" minOccurs="0"/>
       <xsd:element name="hour1" type="time" minOccurs="0"/>
       <xsd:element name="hour2" type="time" minOccurs="0"/>
-      <xsd:element name="carId" type="resCarId"/>
-      <xsd:element name="clientId" type="resClientId"/>
+      <xsd:element name="carId" type="resCarId">
+	<xsd:keyref name="reservationCarIdRef" refer="carId">
+	  <xsd:selector xpath="./carId"/>
+	  <xsd:field xpath="@carId"/>
+	</xsd:keyref>
+      </xsd:element>
+      <xsd:element name="clientId" type="resClientId">
+	<xsd:keyref name="reservationClientIdRef" refer="clientId">
+	  <xsd:selector xpath="./clientId"/>
+	  <xsd:field xpath="@clientId"/>
+	</xsd:keyref>
+      </xsd:element>
       <xsd:element name="deposit" type="xsd:positiveInteger"/>
       <xsd:element name="price" type="xsd:positiveInteger"/>
     </xsd:sequence>
@@ -227,7 +257,12 @@
   
   <xsd:complexType name="reservationList">
     <xsd:sequence>
-      <xsd:element name="reservation" type="reservationData" maxOccurs="unbounded"/>
+      <xsd:element name="reservation" type="reservationData" maxOccurs="unbounded">
+      <xsd:key name="reservationId">
+	<xsd:selector xpath="./reservation"/>
+	<xsd:field xpath="@resId"/>
+      </xsd:key>
+    </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   
@@ -240,36 +275,9 @@
       <xsd:element name="clients" type="clientList"/>
       <xsd:element name="reservations" type="reservationList"/>
     </xsd:sequence>
+
   </xsd:complexType>
   
   <xsd:element name="carRental" type="carRentalData"/>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 </xsd:schema>
