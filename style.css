@@ -1,0 +1,206 @@
+carRental{
+	display: block;
+	text-align: center;
+	background-color: #ffffe6;
+	font-family: "Times New Roman", Times, serif;
+}
+employees:before {
+	display:block;
+	font-weight: bold;
+	font-size: 15pt;
+	content: "Pracownicy";
+	text-align: center;
+}
+employee, car, client, reservation{
+	display: inline-block;
+	border: 1px solid black;
+	vertical-align: top;
+	padding: 10px;
+	margin-bottom: 30px;
+	margin-left: 15px;
+	text-align: left;
+	background-color: #e6ffe6;
+}
+firstName, lastName, employmentDate, contactPhone, registration, brand, model, city, road, mixed, perDay, perHour, availability, clientFirstName, clientLastName, companyName, clientContactPhone, date1, date2 ,date, hour1, hour2, deposit, price{
+	display: block;
+}
+employee:before {
+	display:block;
+	content: "ID pracownika: " attr(empId);
+
+}
+firstName:before {
+	content: "Imię: ";
+}
+lastName:before {
+	content: "Nazwisko: ";
+}
+employmentDate:before {
+	content: "Data zatrudnienia: ";
+}
+contactPhone:before{
+	content: "Numer telefonu: ";
+}
+
+
+cars:before {
+	display:block;
+	font-weight: bold;
+	font-size: 15pt;
+	content: "Samochody";
+	text-align: center;
+}
+car:before{
+	white-space:pre;
+	content: "ID samochodu: " attr(carId) "\A Nadwozie: " attr(type);
+}
+registration:before{
+	content: "Nr rejestracyjny: ";
+}
+brand:before{
+	content: "Marka: ";
+}
+model:before{
+	content: "Model: ";
+}
+model:after {
+	display:block;
+	font-weight: bold;
+	font-size: 13pt;
+	content: "Dane silnika: ";
+}
+size, type, power {
+	display:inline;
+}
+size:after{
+	content: attr(unit);
+}
+power:after{
+	content:" " attr(unit);
+}
+avgFuelUsage:before {
+	display:block;
+	font-weight: bold;
+	font-size: 13pt;
+	content: "Średnie spalanie[" attr(unit) "]: ";
+}
+city:before{
+	content: "Miasto: ";
+}
+road:before{
+	content: "Trasa: ";
+}
+mixed:before{
+	content: "Mieszane: ";
+}
+rentalPrice:before {
+	display:block;
+	font-weight: bold;
+	font-size: 13pt;
+	content: "Cena najmu: ";
+}
+perDay:before{
+	content: "Za dzień: ";
+}
+perDay:after{
+	content: "zł";
+}
+perHour:before{
+	content: "Za godzinę: ";
+}
+perHour:after{
+	content: "zł";
+}
+availability:before{
+	content: "Dostępny? ";
+}
+respEmployeeId:before{
+	content: "Id pracownika: " attr(empId);
+}
+
+
+clients:before {
+	display:block;
+	font-weight: bold;
+	font-size: 15pt;
+	content: "Klienci";
+	text-align: center;
+}
+client:before{
+	content: "ID klienta: " attr(clientId);
+}
+clientFirstName:before {
+	content: "Imię: ";
+}
+clientLastName:before {
+	content: "Nazwisko: ";
+}
+employmentDate:before {
+	content: "Data zatrudnienia: ";
+}
+companyName:before{
+	content: "Nazwa firmy: ";
+}
+clientContactPhone:before{
+	content: "Numer telefonu: ";
+}
+
+
+reservations:before{
+	display:block;
+	font-weight: bold;
+	font-size: 15pt;
+	content: "Dane dotyczące rezerwacji";
+	text-align: center;
+}
+reservation:before{
+	content: "ID rezerwacji: " attr(resId);
+}
+date1:before{
+	content: "Data najmu: ";
+}
+date2:before{
+	content: "Data zwrotu: ";
+}
+date:before{
+	content: "Data najmu: ";
+}
+hour1:before{
+	content: "Godzina najmu: ";
+}
+hour2:before{
+	content: "Godzina zwrotu: ";
+}
+carId:before{
+	content: "Id samochodu: " attr(carId);
+}
+clientId:before{
+	content: "Id klienta: " attr(clientId);
+}
+deposit:before{
+	content: "Kaucja: "
+}
+price:before{
+	content: "Cena najmu: "
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

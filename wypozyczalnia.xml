@@ -1,4 +1,5 @@
-<?xml version = "1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
 <!DOCTYPE carRental SYSTEM "wypozyczalnia.dtd">
 <carRental>
   <employees>
@@ -35,7 +36,7 @@
 	<perDay>600</perDay>
 	<perHour>60</perHour>
       </rentalPrice>
-      <availability>Available</availability>
+      <availability>Tak</availability>
       <respEmployeeId empId="e1"/>
     </car>
     <car carId="s2" type="sedan">
@@ -56,7 +57,7 @@
 	<perDay>800</perDay>
 	<perHour>80</perHour>
       </rentalPrice>
-      <availability>Available</availability>
+      <availability>Tak</availability>
       <respEmployeeId empId="e1"/>
     </car>
     <car carId="s3" type="sedan">
@@ -77,7 +78,7 @@
 	<perDay>500</perDay>
 	<perHour>50</perHour>
       </rentalPrice>
-      <availability>Available</availability>
+      <availability>Tak</availability>
       <respEmployeeId empId="e1"/>
     </car>
     <car carId="s4" type="bus">
@@ -96,7 +97,7 @@
 	<perDay>1100</perDay>
 	<perHour>110</perHour>
       </rentalPrice>
-      <availability>Available</availability>
+      <availability>Tak</availability>
       <respEmployeeId empId="e2"/>
     </car>
   </cars>

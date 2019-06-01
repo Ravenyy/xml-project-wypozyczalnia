@@ -148,8 +148,8 @@
   
   <xsd:simpleType name="availabilityData">
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="Available"/>
-      <xsd:enumeration value="Not available"/>
+      <xsd:enumeration value="Tak"/>
+      <xsd:enumeration value="Nie"/>
     </xsd:restriction>
   </xsd:simpleType>
   
