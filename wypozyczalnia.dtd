@@ -1,10 +1,10 @@
 <!ELEMENT carRental (employees, cars, clients, reservations)>
 
 <!ELEMENT employees (employee+)>
-<!ELEMENT employee (firstName, secondName, employmentDate, contactPhone)>
-<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT employee (firstName, lastName, employmentData, contactPhone)>
+<!ELEMENT lastName (#PCDATA)>
 <!ELEMENT secondName (#PCDATA)>
-<!ELEMENT employmentDate (#PCDATA)>
+<!ELEMENT employmentData (#PCDATA)>
 <!ELEMENT contactPhone (#PCDATA)>
 
 <!ATTLIST employee empId ID #REQUIRED>

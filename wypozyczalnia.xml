@@ -4,13 +4,13 @@
   <employees>
     <employee empId="e1">
       <firstName>Janusz</firstName>
-      <secondName>Kowalski</secondName>
+      <lastName>Kowalski</lastName>
       <employmentDate>06.04.2019</employmentDate>
       <contactPhone>+48123456789</contactPhone>
     </employee>
     <employee empId="e2">
       <firstName>Halina</firstName>
-      <secondName>Nowak</secondName>
+      <lastName>Nowak</lastName>
       <employmentDate>06.05.2019</employmentDate>
       <contactPhone>+48987654321</contactPhone>
     </employee>
@@ -103,13 +103,13 @@
   
   <clients>
     <client clientId="c1">
-      <clientFirstName>Paweł</clientFirstName>
+      <clientFirstName>Dawid</clientFirstName>
       <clientLastName>Szewczyk</clientLastName>
       <clientContactPhone>+48500600700</clientContactPhone>
     </client>
     <client clientId="c2">
       <clientFirstName>Malwina</clientFirstName>
-      <clientLastName>Brzęczyszczykiewicz</clientLastName>
+      <clientLastName>Brzenczyszczykiewicz</clientLastName>
       <companyName>Company Sp. Z.O.O.</companyName>
       <clientContactPhone>+48100200300</clientContactPhone>
     </client>
