@@ -5,13 +5,13 @@
     <employee empId="e1">
       <firstName>Janusz</firstName>
       <secondName>Kowalski</secondName>
-      <employmentData>06.04.2019</employmentData>
+      <employmentDate>06.04.2019</employmentDate>
       <contactPhone>+48123456789</contactPhone>
     </employee>
     <employee empId="e2">
       <firstName>Halina</firstName>
       <secondName>Nowak</secondName>
-      <employmentData>06.05.2019</employmentData>
+      <employmentDate>06.05.2019</employmentDate>
       <contactPhone>+48987654321</contactPhone>
     </employee>
   </employees>	

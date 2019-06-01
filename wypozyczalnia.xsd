@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="names">
+		<xsd:restriction base ="xsd:string">
+			<xsd:minLength value="3"/>
+			<xsd:maxLengtd value="50"/>
+			<xsd:pattern value="[A-Z][a-z]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="date">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{2}[.]\d{2}[.]\d{4}"></xs:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="phoneNumber">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\+\d{11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="carReg">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([A-Z]{2}\s.{5})|(([A-Z]{3})+\s+.{4})"/>
+		</xsd:restriction>
+	</xsd:simple>
+
+	<xsd:simpleType name="carBrand">
+		<xsd:restriction base ="xsd:string">
+			<xsd:minLength value="3"/>
+			<xsd:maxLengtd value="50"/>
+			<xsd:pattern value="[A-Z][a-z]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
