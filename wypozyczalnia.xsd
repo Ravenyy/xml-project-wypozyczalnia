@@ -258,11 +258,11 @@
   <xsd:complexType name="reservationList">
     <xsd:sequence>
       <xsd:element name="reservation" type="reservationData" maxOccurs="unbounded">
-      <xsd:key name="reservationId">
-	<xsd:selector xpath="./reservation"/>
-	<xsd:field xpath="@resId"/>
-      </xsd:key>
-    </xsd:element>
+	<xsd:key name="reservationId">
+	  <xsd:selector xpath="./reservation"/>
+	  <xsd:field xpath="@resId"/>
+	</xsd:key>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   
