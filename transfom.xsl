@@ -6,13 +6,15 @@
       <body>
 	<h1 style="text-align:center">Wypożyczalnia</h1>
 	<xsl:apply-templates/>
+		<script src="ramen.js"></script>
       </body>
     </html>
   </xsl:template>
 
   <xsl:template match="employees">
+  <div id="emp">
     <h2 style="text-align:center">Pracownicy</h2>
-    <table style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
+    <table id="empTab" style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
       <tr>
 	<th>ID</th>
 	<th>Imię</th>
@@ -28,14 +30,17 @@
 	  <td><xsl:value-of select="employmentDate"/></td>
 	  <td><xsl:value-of select="contactPhone"/></td>
 	</tr>
+	
       </xsl:for-each>
     </table>
+	</div>
   </xsl:template>
 
 
   <xsl:template match="cars">
+  	<div id="cars">
     <h2 style="text-align:center">Samochody</h2>
-    <table style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
+    <table id="carsTab" style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
       <tr>
 	<th>ID</th>
 	<th>Typ nadwozia</th>
@@ -69,6 +74,7 @@
 	</tr>
       </xsl:for-each>
     </table>
+	</div>
   </xsl:template>
 
   <xsl:template match="engine">
@@ -129,8 +135,9 @@
   </xsl:template>
 
   <xsl:template match="clients">
+  	<div id="clients">
     <h2 style="text-align:center">Klienci</h2>
-    <table style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
+    <table id="clientsTab" style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
       <tr>
 	<th>ID</th>
 	<th>Imię</th>
@@ -140,6 +147,7 @@
       </tr>
       <xsl:apply-templates select="client"/>
     </table>
+	</div>
   </xsl:template>
 
   <xsl:template match="client">
@@ -158,9 +166,11 @@
       <td><xsl:value-of select="clientContactPhone"/></td>
     </tr>
   </xsl:template>
+  
   <xsl:template match="reservations">
+  	<div id="res">
     <h2 style="text-align:center">Rezerwacje</h2>
-    <table style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
+    <table id="resTab" style="width:100%; text-align:center" border="1" bgcolor="#ffffe6">
       <tr>
 	<th>ID</th>
 	<th>Data</th>
@@ -172,6 +182,7 @@
       </tr>
       <xsl:apply-templates select="reservation"/>
     </table>
+	</div>
   </xsl:template>
 
   <xsl:template match="reservation">
