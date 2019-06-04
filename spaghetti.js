@@ -5,15 +5,17 @@ b1.innerHTML = "Dodaj pracownika";
 document.getElementById("emp").appendChild(b1);
 var b2 = document.createElement("button");
 b2.setAttribute("id", "addCar");
-b2.innerHTML = "Segreguj po cenie";
+b2.setAttribute("onclick", "sortCars()");
+b2.innerHTML = "Sortuj samochody wg ceny";
 document.getElementById("cars").appendChild(b2);
-var b3 = document.createElement("button");
-b3.setAttribute("id", "addCli");
-b3.innerHTML = "Edytuj dane wybranego klienta";
-document.getElementById("clients").appendChild(b3);
+var b5 = document.createElement("button");
+b5.setAttribute("id", "sortReverse");
+b5.setAttribute("onclick", "sortCarsById()");
+b5.innerHTML = "Sortuj samochody wg ID";
+document.getElementById("cars").appendChild(b5);
 var b4 = document.createElement("button");
 b4.setAttribute("id", "addRes");
-b4.innerHTML = "Usuń rezerwację";
+b4.innerHTML = "Edytuj dane rezerwacji";
 document.getElementById("res").appendChild(b4);
 
 function addEmp(){
@@ -98,3 +100,98 @@ function addEmpNext(){
         elToDel.parentNode.removeChild(elToDel);
         document.getElementById("emp").appendChild(b1);
         }
+/*
+function sortCars(){
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("carsTab");
+  switching = true;
+  while (switching) {
+   	switching = false;
+   	rows = table.rows;
+   	for (i = 1; i < (rows.length - 1); i++) {
+   	shouldSwitch = false;
+   	x = rows[i].getElementsByTagName("TD")[9];
+   	y = rows[i + 1].getElementsByTagName("TD")[9];
+   	var integerX = parseInt(y, 10);
+   	var integerY = parseInt(x, 10);
+   	if (integerX > integerY) {
+    	shouldSwitch = true;
+   		break;  
+   		}
+	}
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+  }*/
+  /*
+  function sortCarsById(){
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("carsTab");
+  switching = true;
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[3];
+      y = rows[i + 1].getElementsByTagName("TD")[3];
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+  }*/
+ /*
+function setColumnsAttribute(){
+  var tab, cells, counter, cell;
+  cells = document.getElementById("clientsTab").rows[0].cells.length;
+  for(counter=0; counter<cells; counter++){
+  	cell = document.getElementById("clientsTab").rows[0].getElementsByTagName("TH")[i];
+  	cell.setAttribute("onclick", `sortClients(${i})`);
+    }
+  }
+  */
+  
+  function sortClients(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("clientsTab");
+  switching = true;
+  dir = "asc"; 
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchcount ++; 
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}

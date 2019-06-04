@@ -4,6 +4,25 @@
   <xsl:template match="/">
     <html>
       <body>
+	  <style>
+	  	body {
+        	text-align:center;
+        }
+		table {
+		  border-spacing: 0;
+		  width: 100%;
+		  border: 1px solid #ddd;
+		}
+
+		th, td {
+		  text-align: center;
+		  padding: 16px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2
+		}
+	</style>
 	<h1 style="text-align:center">Wypożyczalnia</h1>
 	<xsl:apply-templates/>
 		<script src="ramen.js"></script>
