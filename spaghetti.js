@@ -3,20 +3,20 @@ b1.setAttribute("id", "addEmp");
 b1.setAttribute("onclick", "addEmp()");
 b1.innerHTML = "Dodaj pracownika";
 document.getElementById("emp").appendChild(b1);
-var b2 = document.createElement("button");
+/*var b2 = document.createElement("button");
 b2.setAttribute("id", "addCar");
 b2.setAttribute("onclick", "sortCars()");
 b2.innerHTML = "Sortuj samochody wg ceny";
-document.getElementById("cars").appendChild(b2);
+document.getElementById("cars").appendChild(b2);*/
 var b5 = document.createElement("button");
 b5.setAttribute("id", "sortReverse");
 b5.setAttribute("onclick", "sortCarsById()");
-b5.innerHTML = "Sortuj samochody wg ID";
+b5.innerHTML = "Sortuj samochody wg rocznika";
 document.getElementById("cars").appendChild(b5);
-var b4 = document.createElement("button");
+/*var b4 = document.createElement("button");
 b4.setAttribute("id", "addRes");
 b4.innerHTML = "Edytuj dane rezerwacji";
-document.getElementById("res").appendChild(b4);
+document.getElementById("res").appendChild(b4);*/
 
 function addEmp(){
 	var y = document.getElementById("empTab").rows.length;
@@ -102,7 +102,7 @@ function addEmpNext(){
         }
 /*
 function sortCars(){
-  var table, rows, switching, i, x, y, shouldSwitch;
+  var table, rows, switching, i, x, y, shouldSwitch, xToNumber, yToNumber;
   table = document.getElementById("carsTab");
   switching = true;
   while (switching) {
@@ -112,9 +112,9 @@ function sortCars(){
    	shouldSwitch = false;
    	x = rows[i].getElementsByTagName("TD")[9];
    	y = rows[i + 1].getElementsByTagName("TD")[9];
-   	var integerX = parseInt(y, 10);
-   	var integerY = parseInt(x, 10);
-   	if (integerX > integerY) {
+    xToNumber = parseInt(x, 10);
+    yToNumber = parseInt(y, 10); 	
+   	if (xToNumber > yToNumber) {
     	shouldSwitch = true;
    		break;  
    		}
@@ -124,30 +124,31 @@ function sortCars(){
       switching = true;
     }
   }
-  }*/
-  /*
-  function sortCarsById(){
+  }
+  */
+function sortCarsById() {
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("carsTab");
   switching = true;
   while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[3];
-      y = rows[i + 1].getElementsByTagName("TD")[3];
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        shouldSwitch = true;
-        break;
-      }
-    }
+   	switching = false;
+   	rows = table.rows;
+   	for (i = 1; i < (rows.length - 1); i++) {
+   	shouldSwitch = false;
+   	x = rows[i].getElementsByTagName("TD")[5];
+   	y = rows[i + 1].getElementsByTagName("TD")[5];
+   	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    	shouldSwitch = true;
+   		break;  
+   		}
+	}
     if (shouldSwitch) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
     }
   }
-  }*/
+  }
+ 
 function setColumnsAttribute(tab){
   var cells, i, cell;
   cells = tab.rows[0].cells.length;
@@ -157,7 +158,7 @@ function setColumnsAttribute(tab){
     }
   }
   
- setColumnsAttribute(document.getElementById("clientsTab"));
+  setColumnsAttribute(document.getElementById("clientsTab"));
   
   function sortClients(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -195,3 +196,29 @@ function setColumnsAttribute(tab){
     }
   }
 }
+
+/*function setCellsAttribute(tab){
+  var cells, i, cell, j;
+  cells = tab.rows[0].cells.length;
+  for(i=1; i<tab.rows.length; i++){
+  		for(j=0; j<cells; j++){
+  			cell = tab.rows[i].getElementsByTagName("TD")[j];
+  			cell.setAttribute("onclick", `editData(${i}+${j})`);
+   		}
+    }
+  }
+  setCellsAttribute(document.getElementById("resTab"));
+  
+function editData(n){
+  var tab, cells, i, cell, j;
+  tab = document.getElementById("resTab");
+  cells = tab.rows[0].cells.length;
+  for(i=1; i<tab.rows.length; i++){
+  		for(j=0; j<cells; j++){
+  			cell = tab.rows[i].getElementsByTagName("TD")[j];
+  			if(n == Number(${i}+${j})){
+            	tab.rows[i]document.getElementByTag("TD")[j].innerHTML = 
+            }
+   		}
+    }
+}*/
