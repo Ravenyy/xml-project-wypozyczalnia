@@ -3,11 +3,11 @@ b1.setAttribute("id", "addEmp");
 b1.setAttribute("onclick", "addEmp()");
 b1.innerHTML = "Dodaj pracownika";
 document.getElementById("emp").appendChild(b1);
-/*var b2 = document.createElement("button");
+var b2 = document.createElement("button");
 b2.setAttribute("id", "addCar");
 b2.setAttribute("onclick", "sortCars()");
 b2.innerHTML = "Sortuj samochody wg ceny";
-document.getElementById("cars").appendChild(b2);*/
+document.getElementById("cars").appendChild(b2);
 var b5 = document.createElement("button");
 b5.setAttribute("id", "sortReverse");
 b5.setAttribute("onclick", "sortCarsById()");
@@ -100,7 +100,7 @@ function addEmpNext(){
         elToDel.parentNode.removeChild(elToDel);
         document.getElementById("emp").appendChild(b1);
         }
-/*
+
 function sortCars(){
   var table, rows, switching, i, x, y, shouldSwitch, xToNumber, yToNumber;
   table = document.getElementById("carsTab");
@@ -110,8 +110,8 @@ function sortCars(){
    	rows = table.rows;
    	for (i = 1; i < (rows.length - 1); i++) {
    	shouldSwitch = false;
-   	x = rows[i].getElementsByTagName("TD")[9];
-   	y = rows[i + 1].getElementsByTagName("TD")[9];
+   	x = rows[i].getElementsByTagName("TD")[9].innerHTML;
+   	y = rows[i + 1].getElementsByTagName("TD")[9].innerHTML;
     xToNumber = parseInt(x, 10);
     yToNumber = parseInt(y, 10); 	
    	if (xToNumber > yToNumber) {
@@ -125,7 +125,7 @@ function sortCars(){
     }
   }
   }
-  */
+  
 function sortCarsById() {
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("carsTab");
