@@ -25,7 +25,7 @@
 	</style>
 	<h1 style="text-align:center">Wypożyczalnia</h1>
 	<xsl:apply-templates/>
-		<script src="ramen.js"></script>
+		<script src="spaghetti.js"></script>
       </body>
     </html>
   </xsl:template>
