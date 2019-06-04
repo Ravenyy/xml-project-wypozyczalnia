@@ -11,7 +11,7 @@ document.getElementById("cars").appendChild(b2);
 var b5 = document.createElement("button");
 b5.setAttribute("id", "sortReverse");
 b5.setAttribute("onclick", "sortCarsById()");
-b5.innerHTML = "Sortuj samochody wg rocznika";
+b5.innerHTML = "Sortuj samochody wg ID";
 document.getElementById("cars").appendChild(b5);
 /*var b4 = document.createElement("button");
 b4.setAttribute("id", "addRes");
@@ -135,8 +135,8 @@ function sortCarsById() {
    	rows = table.rows;
    	for (i = 1; i < (rows.length - 1); i++) {
    	shouldSwitch = false;
-   	x = rows[i].getElementsByTagName("TD")[5];
-   	y = rows[i + 1].getElementsByTagName("TD")[5];
+   	x = rows[i].getElementsByTagName("TD")[0];
+   	y = rows[i + 1].getElementsByTagName("TD")[0];
    	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
     	shouldSwitch = true;
    		break;  
