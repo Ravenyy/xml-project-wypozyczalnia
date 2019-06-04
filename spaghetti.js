@@ -148,16 +148,16 @@ function sortCars(){
     }
   }
   }*/
- /*
-function setColumnsAttribute(){
-  var tab, cells, counter, cell;
-  cells = document.getElementById("clientsTab").rows[0].cells.length;
-  for(counter=0; counter<cells; counter++){
-  	cell = document.getElementById("clientsTab").rows[0].getElementsByTagName("TH")[i];
+function setColumnsAttribute(tab){
+  var cells, i, cell;
+  cells = tab.rows[0].cells.length;
+  for(i=0; i<cells; i++){
+  	cell = tab.rows[0].getElementsByTagName("TH")[i];
   	cell.setAttribute("onclick", `sortClients(${i})`);
     }
   }
-  */
+  
+ setColumnsAttribute(document.getElementById("clientsTab"));
   
   function sortClients(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
